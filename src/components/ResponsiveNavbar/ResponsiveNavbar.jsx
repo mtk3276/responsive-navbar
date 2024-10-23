@@ -1,4 +1,4 @@
-import NavLinks from "./NavLinks";
+import NavLinks from "../NavLinks/NavLinks";
 import "./ResponsiveNavbar.css";
 
 export default function ResponsiveNavbar() {
