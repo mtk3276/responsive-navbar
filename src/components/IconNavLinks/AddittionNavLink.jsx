@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import AddIcon from "../../icons/AddIcon";
 
@@ -10,3 +11,7 @@ export default function AddittionNavLink({ onClick }) {
         </NavLink>
     )
 }
+
+AddittionNavLink.propTypes = {
+    onClick: PropTypes.func.isRequired,
+};

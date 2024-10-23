@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { NavLink } from "react-router-dom";
 import "./NavLinks.css";
 
@@ -25,5 +26,10 @@ const NavLinks = ({ isMobile, closeMobileMenu }) => {
     </ul>
   );
 };
+
+NavLinks.propTypes = {
+  isMobile: PropTypes.bool.isRequired,
+  closeMobileMenu: PropTypes.func.isRequired,
+}
 
 export default NavLinks;

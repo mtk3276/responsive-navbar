@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import StyledSvgIcon from "./StyledSvgIcon"
 
 export default function AddIcon({ fill = "white", ...props }) {
@@ -9,3 +10,7 @@ export default function AddIcon({ fill = "white", ...props }) {
         </StyledSvgIcon>
     )
 }
+
+AddIcon.propTypes = {
+    fill: PropTypes.string,
+};

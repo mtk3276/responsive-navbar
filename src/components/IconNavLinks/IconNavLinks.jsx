@@ -2,6 +2,7 @@ import "./IconNavLinks.css";
 import HomeNavLink from "./HomeNavLink";
 import AddittionNavLink from "./AddittionNavLink";
 import SettingsNavLink from "./SettingsNavLink";
+import PropTypes from "prop-types";
 
 export default function IconNavLinks({ isMobile, closeMobileMenu }) {
   const listClassName = isMobile ? "nav__list" : "nav__list__web";
@@ -19,4 +20,9 @@ export default function IconNavLinks({ isMobile, closeMobileMenu }) {
         </li>
     </ul>
   );
+};
+
+IconNavLinks.propTypes = {
+  isMobile: PropTypes.bool.isRequired,
+  closeMobileMenu: PropTypes.func.isRequired,
 };
