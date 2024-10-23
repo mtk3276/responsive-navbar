@@ -18,6 +18,15 @@
     height: var(--header-height);
 }
 
+.nav-web {
+    height: var(--header-height);
+}
+
+.nav-mobile {
+    height: var(--header-height-mobile);
+    padding-top: 2rem;
+}
+
 .nav__logo {
     color: var(--first-color);
     font-size: var(--h2-font-size);
