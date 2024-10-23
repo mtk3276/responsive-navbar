@@ -1,5 +1,5 @@
 import { useNavbarState } from "../../hooks/useNavbarState";
-import NavLinks from "../NavLinks/NavLinks";
+import IconNavLinks from "../IconNavLinks/IconNavLinks";
 import "./ResponsiveNavbar.css";
 
 export default function ResponsiveNavbar() {
@@ -16,13 +16,13 @@ export default function ResponsiveNavbar() {
 
                 {isMobile ? (
                     <div className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`} id="nav-menu" onClick={closeMobileMenu}>
-                        {<NavLinks isMobile={isMobile} closeMobileMenu={closeMobileMenu}/>}
+                        {<IconNavLinks isMobile={isMobile} closeMobileMenu={closeMobileMenu}/>}
                         <div className="nav__close" id="nav-close" onClick={toggleMenu}>
                             CLOSE
                         </div>
                     </div>
                 ) : (
-                    <NavLinks isMobile={isMobile} closeMobileMenu={closeMobileMenu}/>
+                    <IconNavLinks isMobile={isMobile} closeMobileMenu={closeMobileMenu}/>
                 )}
                 <a href="/" className="nav__logo" aria-label="Go to the THEMATHSCLUB.COM homepage">
                     <span>THE</span>
