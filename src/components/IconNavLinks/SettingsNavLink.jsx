@@ -6,7 +6,7 @@ export default function SettingsNavLink({ onClick }) {
     return (
         <NavLink aria-label="settings" to="/settings" onClick={onClick}>
             {({ isActive }) =>  (
-                <SettingsIcon fill={isActive ? "var(--second-color)" : "var(--first-color)"}/>
+                <SettingsIcon data-testid="settings-icon" fill={isActive ? "var(--second-color)" : "var(--first-color)"}/>
             )}
         </NavLink>
     )

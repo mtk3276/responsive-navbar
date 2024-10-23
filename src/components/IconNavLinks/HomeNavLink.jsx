@@ -6,7 +6,7 @@ export default function HomeNavLink({ onClick }) {
     return (
         <NavLink aria-label="home" to="/" onClick={onClick}>
             {({ isActive }) =>  (
-                <HomeIcon fill={isActive ? "var(--second-color)" : "var(--first-color)"}/>
+                <HomeIcon data-testid="home-icon" fill={isActive ? "var(--second-color)" : "var(--first-color)"}/>
             )}
         </NavLink>
     )

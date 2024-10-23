@@ -35,9 +35,9 @@ describe('IconNavLinks - Initial Render', () => {
         expect(linksList).toHaveClass('nav__list');
 
         // Expect icons to be in the document
-        expect(screen.getByRole("link", { name: /home/i })).toBeInTheDocument();
-        expect(screen.getByRole("link", { name: /worksheet/i })).toBeInTheDocument();
-        expect(screen.getByRole("link", { name: /settings/i })).toBeInTheDocument();
+        expect(screen.getByTestId("home-icon")).toBeInTheDocument();
+        expect(screen.getByTestId("add-icon")).toBeInTheDocument();
+        expect(screen.getByTestId("settings-icon")).toBeInTheDocument();
     });
 });
 
@@ -80,3 +80,44 @@ describe("Props not passed to IconNavLinks component", () => {
         expect(linksList).toHaveClass("nav__list__web");
     });
 });
+
+describe("Navigation", () => {
+    const otherRoute = "/other";
+    const homeRoute = "/";
+    const worksheetRoute = "/worksheet";
+    const settingsRoute = "/settings";
+
+    beforeEach(() => {
+        render(
+            <MemoryRouter initialEntries={[otherRoute]}>
+                <IconNavLinks isMobile={false} closeMobileMenu={() => {}}/>
+                <Routes>
+                    <Route path={homeRoute} element={<div data-testid="home-page">Home Page</div>} />
+                    <Route path={worksheetRoute} element={<div data-testid="worksheet-page">Worksheet Page</div>} />
+                    <Route path={settingsRoute} element={<div data-testid="settings-page">Settings Page</div>} />
+                </Routes>
+            </MemoryRouter>
+        );
+    });
+
+    it("navigates to home when home link is clicked", () => {
+        const homeLink = screen.getByRole("link", { name: "home" });
+        fireEvent.click(homeLink);
+
+        expect(screen.getByText(/Home Page/i)).toBeInTheDocument();
+    })
+    
+    it("navigates to worksheet when worksheet link is clicked", () => {
+        const worksheetLink = screen.getByRole("link", { name: "worksheet" });
+        fireEvent.click(worksheetLink);
+
+        expect(screen.getByText(/Worksheet Page/i)).toBeInTheDocument();
+    })
+    
+    it("navigates to settings when settings link is clicked", () => {
+        const settingsLink = screen.getByRole("link", { name: "settings" });
+        fireEvent.click(settingsLink);
+
+        expect(screen.getByText(/Settings Page/i)).toBeInTheDocument();
+    })
+})
