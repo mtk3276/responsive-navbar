@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import StyledSvgIcon from "./StyledSvgIcon";
 
 export default function MultiplyIcon({ fill = "white" }) {
@@ -11,3 +12,7 @@ export default function MultiplyIcon({ fill = "white" }) {
         </StyledSvgIcon>
     );
 }
+
+MultiplyIcon.propTypes = {
+    fill: PropTypes.string,
+};

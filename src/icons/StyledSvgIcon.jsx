@@ -1,4 +1,5 @@
 import { styled } from "@mui/material";
+import PropTypes from "prop-types";
 
 export default function StyledSvgIcon({ fill = "white", children, ...props }) {
 
@@ -25,4 +26,12 @@ export default function StyledSvgIcon({ fill = "white", children, ...props }) {
                 {children}
         </StyledSvg>
     )
+}
+
+StyledSvgIcon.propTypes = {
+    children: PropTypes.oneOfType([
+        PropTypes.arrayOf(PropTypes.node),
+        PropTypes.node
+    ]).isRequired,
+    fill: PropTypes.string,
 }

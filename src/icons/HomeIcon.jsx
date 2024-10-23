@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import StyledSvgIcon from "./StyledSvgIcon";
 
 export default function HomeIcon({ fill = "white", ...props }) {
@@ -10,3 +11,7 @@ export default function HomeIcon({ fill = "white", ...props }) {
         </StyledSvgIcon>
     )   
 }
+
+HomeIcon.propTypes = {
+    fill: PropTypes.string,
+};

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import StyledSvgIcon from "./StyledSvgIcon";
 
 export default function SubtractIcon({ fill = "white" }) {
@@ -7,3 +8,7 @@ export default function SubtractIcon({ fill = "white" }) {
         </StyledSvgIcon>
     )
 }
+
+SubtractIcon.propTypes = {
+    fill: PropTypes.string,
+};

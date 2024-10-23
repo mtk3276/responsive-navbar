@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { NavLink } from "react-router-dom";
 import HomeIcon from "../../icons/HomeIcon";
 
@@ -10,3 +11,7 @@ export default function HomeNavLink({ onClick }) {
         </NavLink>
     )
 }
+
+HomeNavLink.propTypes = {
+    onClick: PropTypes.func.isRequired,
+};

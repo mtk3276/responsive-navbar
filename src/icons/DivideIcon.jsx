@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import StyledSvgIcon from "./StyledSvgIcon";
 
 export default function DivideIcon({ fill = "White" }) {
@@ -9,3 +10,7 @@ export default function DivideIcon({ fill = "White" }) {
         </StyledSvgIcon>
     )
 }
+
+DivideIcon.propTypes = {
+    fill: PropTypes.string,
+};

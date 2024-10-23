@@ -1,5 +1,6 @@
 import { NavLink } from "react-router-dom";
 import SettingsIcon from "../../icons/SettingsIcon";
+import PropTypes from "prop-types";
 
 export default function SettingsNavLink({ onClick }) {
     return (
@@ -10,3 +11,7 @@ export default function SettingsNavLink({ onClick }) {
         </NavLink>
     )
 }
+
+SettingsNavLink.propTypes = { 
+    onClick: PropTypes.func.isRequired,
+};
