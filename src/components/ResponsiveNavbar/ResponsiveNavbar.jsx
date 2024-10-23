@@ -1,21 +1,11 @@
 import { useState } from "react";
 import { useMediaQuery } from "react-responsive";
+import { useNavbarState } from "../../hooks/useNavbarState";
 import NavLinks from "../NavLinks/NavLinks";
 import "./ResponsiveNavbar.css";
 
 export default function ResponsiveNavbar() {
-    const [isMenuOpen, setIsMenuOpen] = useState(false);
-    const isMobile = useMediaQuery({ maxWidth: "1150px" });
-
-    const toggleMenu = () => {
-        setIsMenuOpen(!isMenuOpen);
-      };
-    
-      const closeMobileMenu = () => {
-        if (isMobile) {
-          setIsMenuOpen(false);
-        }
-      };
+    const { isMenuOpen, isMobile, toggleMenu, closeMobileMenu } = useNavbarState();
 
     return (
         <header className="header">
