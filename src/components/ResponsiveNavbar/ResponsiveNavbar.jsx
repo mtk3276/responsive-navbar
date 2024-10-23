@@ -1,5 +1,3 @@
-import { useState } from "react";
-import { useMediaQuery } from "react-responsive";
 import { useNavbarState } from "../../hooks/useNavbarState";
 import NavLinks from "../NavLinks/NavLinks";
 import "./ResponsiveNavbar.css";
