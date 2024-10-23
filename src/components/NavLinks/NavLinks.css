@@ -1,15 +1,10 @@
 .nav__list {
     display: flex;
     flex-direction: column;
-    row-gap: 4rem;
+    column-gap: 4rem;
+    list-style-type: none;
     align-items: center;
-}
-
-.nav__link {
-    color: var(--first-color);
-    font-size: 2rem;
-    font-weight: var(--font-regular);
-    transition: color 0.4s;
+    padding: 0;
 }
 
 .nav__list__web {
@@ -19,4 +14,11 @@
     align-items: center;
     list-style-type: none;
     padding: 0;
+}
+
+.nav__link {
+    color: var(--first-color);
+    font-size: 2rem;
+    font-weight: var(--font-regular);
+    transition: color 0.4s;
 }

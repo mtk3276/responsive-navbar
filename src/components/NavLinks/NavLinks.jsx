@@ -8,17 +8,17 @@ const NavLinks = ({ isMobile, closeMobileMenu }) => {
   return (
     <ul className={listClassName}>
       <li className="nav__item">
-        <NavLink to="/" className="nav__link">
+        <NavLink to="/" className="nav__link" onClick={closeMobileMenu}>
             Home
         </NavLink>
       </li>
       <li className="nav__item">
-        <NavLink to="/worksheet" className="nav__link">
+        <NavLink to="/worksheet" className="nav__link" onClick={closeMobileMenu}>
             Worksheet
         </NavLink>
       </li>
       <li className="nav__item">
-        <NavLink to="/settings" className="nav__link">
+        <NavLink to="/settings" className="nav__link" onClick={closeMobileMenu}>
             Settings
         </NavLink>
       </li>
