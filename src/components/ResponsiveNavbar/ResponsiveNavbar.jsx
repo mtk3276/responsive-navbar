@@ -17,14 +17,14 @@ export default function ResponsiveNavbar() {
                 )}
 
                 {isMobile ? (
-                    <div className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`} id="nav-menu" onClick={toggleMenu}>
-                        {<NavLinks isMobile={isMobile}/>}
+                    <div className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`} id="nav-menu" onClick={closeMobileMenu}>
+                        {<NavLinks isMobile={isMobile} closeMobileMenu={closeMobileMenu}/>}
                         <div className="nav__close" id="nav-close" onClick={toggleMenu}>
                             CLOSE
                         </div>
                     </div>
                 ) : (
-                    <NavLinks isMobile={isMobile} />
+                    <NavLinks isMobile={isMobile} closeMobileMenu={closeMobileMenu}/>
                 )}
                 <a href="/" className="nav__logo" aria-label="Go to the THEMATHSCLUB.COM homepage">
                     <span>THE</span>
