@@ -1,0 +1,22 @@
+.nav__list {
+    display: flex;
+    flex-direction: column;
+    row-gap: 4rem;
+    align-items: center;
+}
+
+.nav__link {
+    color: var(--first-color);
+    font-size: 2rem;
+    font-weight: var(--font-regular);
+    transition: color 0.4s;
+}
+
+.nav__list__web {
+    display: flex;
+    flex-direction: row;
+    column-gap: 4rem;
+    align-items: center;
+    list-style-type: none;
+    padding: 0;
+}
