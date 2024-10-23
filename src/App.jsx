@@ -1,13 +1,19 @@
-import './App.css'
-import ResponsiveNavbar from './components/ResponsiveNavbar'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import ResponsiveNavbar from './components/ResponsiveNavbar';
+import './App.css';
 
 function App() {
 
   return (
     <>
-      <div>
+      <Router>
         <ResponsiveNavbar />
-      </div>
+        <main>
+          <Routes>
+            <Route path='/' />
+          </Routes>
+        </main>
+      </Router>
     </>
   )
 }
