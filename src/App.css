@@ -16,6 +16,10 @@
   font-weight: var(--font-bold);
 }
 
+.main__content {
+  font-size: var(--body-font-size);
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;

@@ -1,5 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ResponsiveNavbar from './components/ResponsiveNavbar';
+import Home from './routes/Home';
+import Worksheet from './routes/Worksheet';
+import Settings from './routes/Settings';
 import './App.css';
 
 function App() {
@@ -8,9 +11,11 @@ function App() {
     <>
       <Router>
         <ResponsiveNavbar />
-        <main>
+        <main className='main__content'>
           <Routes>
-            <Route path='/' />
+            <Route path='/' element={<Home />}/>
+            <Route path='/worksheet' element={<Worksheet />}/>
+            <Route path='/settings' element={<Settings />}/>
           </Routes>
         </main>
       </Router>
