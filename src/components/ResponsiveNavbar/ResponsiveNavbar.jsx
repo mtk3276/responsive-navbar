@@ -15,7 +15,7 @@ export default function ResponsiveNavbar() {
                 )}
 
                 {isMobile ? (
-                    <div className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`} id="nav-menu" onClick={closeMobileMenu}>
+                    <div className={`nav__menu ${isMenuOpen ? "show-menu" : ""}`} id="nav-menu" onClick={closeMobileMenu} data-testid="nav-menu">
                         {<IconNavLinks isMobile={isMobile} closeMobileMenu={closeMobileMenu}/>}
                         <div className="nav__close" id="nav-close" onClick={toggleMenu}>
                             CLOSE
@@ -24,7 +24,7 @@ export default function ResponsiveNavbar() {
                 ) : (
                     <IconNavLinks isMobile={isMobile} closeMobileMenu={closeMobileMenu}/>
                 )}
-                <a href="/" className="nav__logo" aria-label="Go to the THEMATHSCLUB.COM homepage">
+                <a href="/" className="nav__logo" aria-label="Go to the THEMATHSCLUB.COM homepage" data-testid="the-maths-club-logo">
                     <span>THE</span>
                     <span>MATHS</span>
                     <span>CLUB</span>
