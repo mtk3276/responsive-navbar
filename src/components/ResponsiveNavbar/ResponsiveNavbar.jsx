@@ -1,3 +1,4 @@
+import { NavLink } from "react-router-dom";
 import { useNavbarState } from "../../hooks/useNavbarState";
 import IconNavLinks from "../IconNavLinks/IconNavLinks";
 import "./ResponsiveNavbar.css";
@@ -24,11 +25,11 @@ export default function ResponsiveNavbar() {
                 ) : (
                     <IconNavLinks isMobile={isMobile} closeMobileMenu={closeMobileMenu}/>
                 )}
-                <a href="/" className="nav__logo" aria-label="Go to the THEMATHSCLUB.COM homepage" data-testid="the-maths-club-logo">
+                <NavLink to="/" className="nav__logo" aria-label="Go to the THEMATHSCLUB.COM homepage" data-testid="the-maths-club-logo">
                     <span>THE</span>
                     <span>MATHS</span>
                     <span>CLUB</span>
-                </a>
+                </NavLink>
             </nav>
         </header>
     )
