@@ -1,5 +1,5 @@
 import { screen, render, fireEvent } from "@testing-library/react";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, MemoryRouter, Routes, Route } from "react-router-dom";
 import { useMediaQuery } from "react-responsive";
 import ResponsiveNavbar from "./ResponsiveNavbar";
 
@@ -102,9 +102,98 @@ describe("Menu - close on link and background click", () => {
     });
 
     it("closes when menu background is clicked", () => {
-        const menu = screen.getByTestId("nav-menu");
+        const homeLink = screen.getByRole("link", { name: /^home$/i });
 
         fireEvent.click(menu);
         expect(screen.getByTestId("nav-menu")).not.toHaveClass("show-menu");
     })
+})
+
+
+/* Integration Tests */
+
+describe("Navigation", () => {
+    const otherRoute = "/other";
+    const homeRoute = "/";
+    const settingsRoute = "/settings";
+    const worksheetRoute = "/worksheet";
+
+    describe("web view", () => {
+        beforeEach(() => {
+            useMediaQuery.mockReturnValue(false);
+            
+            render(
+                <MemoryRouter initialEntries={[otherRoute]}>
+                    <ResponsiveNavbar />
+                    <Routes>
+                        <Route path={homeRoute} element={<div data-testid="home-page">Home Page</div>} />
+                        <Route path={worksheetRoute} element={<div data-testid="worksheet-page">Worksheet Page</div>} />
+                        <Route path={settingsRoute} element={<div data-testid="settings-page">Settings Page</div>} />
+                    </Routes>
+                </MemoryRouter>
+            );
+        });
+
+        it("navigates to home when the home link is clicked", () => {
+            const homeLink = screen.getByRole("link", { name: /^home$/i });
+            fireEvent.click(homeLink);
+
+            expect(screen.getByText("Home Page")).toBeInTheDocument();
+        });
+
+        it("navigates to worksheet when the worksheet link is clicked", () => {
+            const worksheetLink = screen.getByRole("link", { name: /worksheet/i });
+            fireEvent.click(worksheetLink);
+
+            expect(screen.getByText("Worksheet Page")).toBeInTheDocument();
+        });
+
+        it("navigates to settings when the settings link is clicked", () => {
+            const settingsLink = screen.getByRole('link', { name: /settings/i });
+            fireEvent.click(settingsLink);
+
+            expect(screen.getByText("Settings Page")).toBeInTheDocument();
+        });
+    });
+
+    describe("mobile view", () => {
+        beforeEach(() => {
+            useMediaQuery.mockReturnValue(true);
+
+            render(
+                <MemoryRouter initialEntries={[otherRoute]}>
+                    <ResponsiveNavbar />
+                    <Routes>
+                        <Route path={homeRoute} element={<div data-testid="home-page">Home Page</div>} />
+                        <Route path={worksheetRoute} element={<div data-testid="worksheet-page">Worksheet Page</div>} />
+                        <Route path={settingsRoute} element={<div data-testid="settings-page">Settings Page</div>} />
+                    </Routes>
+                </MemoryRouter>
+            );
+
+            fireEvent.click(screen.getByText(/menu/i));
+            expect(screen.getByTestId("nav-menu")).toHaveClass("show-menu");
+        });
+
+        it("navigates to home when the home link is clicked", () => {
+            const homeLink = screen.getByRole("link", { name: /^home$/i });
+            fireEvent.click(homeLink);
+
+            expect(screen.getByText("Home Page")).toBeInTheDocument();
+        });
+
+        it("navigates to worksheet when the worksheet link is clicked", () => {
+            const worksheetLink = screen.getByRole('link', { name: /worksheet/i });
+            fireEvent.click(worksheetLink);
+
+            expect(screen.getByText("Worksheet Page")).toBeInTheDocument();
+        });
+
+        it("navigates to settings when the settings link is clicked", () => {
+            const settingsLink = screen.getByRole('link', { name: /settings/i });
+            fireEvent.click(settingsLink);
+
+            expect(screen.getByText("Settings Page")).toBeInTheDocument();
+        });
+    });
 })

@@ -35,9 +35,10 @@ describe('IconNavLinks - Initial Render', () => {
         expect(linksList).toHaveClass('nav__list');
 
         // Expect icons to be in the document
-        expect(screen.getByTestId("home-icon")).toBeInTheDocument();
-        expect(screen.getByTestId("add-icon")).toBeInTheDocument();
-        expect(screen.getByTestId("settings-icon")).toBeInTheDocument();
+        expect(screen.getByText("THE MATHS CLUB")).toBeInTheDocument();
+        expect(screen.getByRole("link", { name: /home/i })).toBeInTheDocument();
+        expect(screen.getByRole("link", { name: /worksheet/i })).toBeInTheDocument();
+        expect(screen.getByRole("link", { name: /settings/i })).toBeInTheDocument();
     });
 });
 
