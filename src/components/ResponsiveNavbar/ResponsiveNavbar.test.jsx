@@ -102,7 +102,7 @@ describe("Menu - close on link and background click", () => {
     });
 
     it("closes when menu background is clicked", () => {
-        const homeLink = screen.getByRole("link", { name: /^home$/i });
+        const menu = screen.getByText(/menu/i)
 
         fireEvent.click(menu);
         expect(screen.getByTestId("nav-menu")).not.toHaveClass("show-menu");
