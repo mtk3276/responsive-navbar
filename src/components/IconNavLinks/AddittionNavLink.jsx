@@ -6,7 +6,7 @@ export default function AddittionNavLink({ onClick }) {
     return (
         <NavLink aria-label="worksheet" to="/worksheet" onClick={onClick}>
             {({ isActive }) =>  (
-                <AddIcon fill={isActive ? "var(--second-color)" : "var(--first-color)"}/>
+                <AddIcon data-testid="add-icon" fill={isActive ? "var(--second-color)" : "var(--first-color)"}/>
             )}
         </NavLink>
     )

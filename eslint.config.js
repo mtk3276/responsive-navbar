@@ -11,7 +11,14 @@ export default [
     },
   }},
   {ignores: ["node_modules", "build", "dist"]},
-  {languageOptions: { globals: globals.browser }},
+  {
+    languageOptions: { 
+      globals: {
+        ...globals.browser,
+        ...globals.jest
+      }
+    }
+  },
   pluginJs.configs.recommended,
   pluginReact.configs.flat.recommended,
   {
