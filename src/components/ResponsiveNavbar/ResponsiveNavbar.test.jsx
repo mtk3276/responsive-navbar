@@ -134,6 +134,13 @@ describe("Navigation", () => {
             );
         });
 
+        it('navigates to home when the logo is clicked', () => {
+            const logo = screen.getByTestId("the-maths-club-logo");
+            fireEvent.click(logo);
+
+            expect(screen.getByText("Home Page")).toBeInTheDocument();
+        });
+
         it("navigates to home when the home link is clicked", () => {
             const homeLink = screen.getByRole("link", { name: /^home$/i });
             fireEvent.click(homeLink);
@@ -173,6 +180,16 @@ describe("Navigation", () => {
 
             fireEvent.click(screen.getByText(/menu/i));
             expect(screen.getByTestId("nav-menu")).toHaveClass("show-menu");
+        });
+
+        it('navigates to home when the logo is clicked', () => {
+            fireEvent.click(screen.getByText(/close/i));
+            expect(screen.getByTestId("nav-menu")).not.toHaveClass("show-menu");
+        
+            const logo = screen.getByTestId("the-maths-club-logo");
+            fireEvent.click(logo);
+        
+            expect(screen.getByText("Home Page")).toBeInTheDocument();
         });
 
         it("navigates to home when the home link is clicked", () => {
