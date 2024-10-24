@@ -41,32 +41,34 @@ describe("NavLinks - Initial Render", () => {
     });
 });
 
-describe("Links call closeNavMenu when clicked:", () => {
+describe("Links call closeMobileMenu when clicked:", () => {
+    let closeMobileMenu;
+    
     beforeEach(() => {
-        closeNavMenu = jest.fn();
+        closeMobileMenu = jest.fn();
 
-        renderLinksList(false, closeNavMenu);
+        renderLinksList(false, closeMobileMenu);
     });
 
     it("Home Link", () => {
         const homeLink = screen.getByText(/home/i);
         fireEvent.click(homeLink);
 
-        expect(closeNavMenu).toHaveBeenCalled();
+        expect(closeMobileMenu).toHaveBeenCalled();
     })
 
     it("Settings Link", () => {
         const settingsLink = screen.getByText(/worksheet/i);
         fireEvent.click(settingsLink);
 
-        expect(closeNavMenu).toHaveBeenCalled();
+        expect(closeMobileMenu).toHaveBeenCalled();
     })
 
     it("Worksheet Link", () => {
         const worksheetLink = screen.getByText(/settings/i);
         fireEvent.click(worksheetLink);
 
-        expect(closeNavMenu).toHaveBeenCalled();
+        expect(closeMobileMenu).toHaveBeenCalled();
     })
 });
 

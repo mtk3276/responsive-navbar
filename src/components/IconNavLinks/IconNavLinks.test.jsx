@@ -41,32 +41,34 @@ describe('IconNavLinks - Initial Render', () => {
     });
 });
 
-describe("Icons call closeNavMenu when clicked:", () => {
-    beforeEach(() => {
-        closeNavMenu = jest.fn();
+describe("Icons call closeMobileMenu when clicked:", () => {
+    let closeMobileMenu;
 
-        renderLinksList(false, closeNavMenu);
+    beforeEach(() => {
+        closeMobileMenu = jest.fn();
+
+        renderLinksList(false, closeMobileMenu);
     });
 
     it("Home Link", () => {
         const homeLink = screen.getByRole("link", { name: /home/i });
         fireEvent.click(homeLink);
 
-        expect(closeNavMenu).toHaveBeenCalled();
+        expect(closeMobileMenu).toHaveBeenCalled();
     })
 
     it("Settings Link", () => {
         const settingsLink = screen.getByRole("link", { name: /settings/i });
         fireEvent.click(settingsLink);
 
-        expect(closeNavMenu).toHaveBeenCalled();
+        expect(closeMobileMenu).toHaveBeenCalled();
     })
 
     it("Worksheet Link", () => {
         const worksheetLink = screen.getByRole("link", { name: /worksheet/i });
         fireEvent.click(worksheetLink);
 
-        expect(closeNavMenu).toHaveBeenCalled();
+        expect(closeMobileMenu).toHaveBeenCalled();
     })
 });
 
