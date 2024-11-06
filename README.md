@@ -1,25 +1,35 @@
-<h1 align="center">Hi 👋, I'm Muhsina</h1>
-<h3 align="center">A passionate frontend developer</h3>
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=mtk3276&label=Profile%20views&color=0e75b6&style=flat" alt="mtk3276" /> </p>
+# Responsive Navbar for The Maths Club 
 
-<h1> Responsive Navbar for The Maths Club </h1>
+## Project Description
+This project implements a responsive navigation bar built with React. The Navbar adapts to both mobile and web layouts, providing a toggleable menu for mobile views. The app uses React Router for navigation and Material UI for styling. It includes both unit and integration tests to ensure robustness and functionality across different screen sizes and user interactions.
 
-<h2>Project Description</h2>
-<p></p>
-This application is a blueprint for a responsive navbar. 
+## Features
+- Mobile-first responsive design
+- Menu toggle for mobile views
+- Easy integration with React Router
+- Unit and integration tests with Jest
+- Customisable links for navigation
 
-The blueprint uses the following technologies:
-<ul>
-    <li>React</li>
-    <li>React Router</li>
-    <li>Material UI</li>
-</ul>
+## Getting Started
+1. Clone the repo: `https://github.com/mtk3276/responsive-navbar.git`
+2. Install dependencies: `npm install`
+3. Run the app: `npm run dev`
+4. Open in browser: Go to [http://localhost:5173](http://localhost:5173) to view the app
 
-<h3 align="left">Languages and Tools:</h3>
-<p align="left"> <a href="https://www.adobe.com/in/products/illustrator.html" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/adobe_illustrator/adobe_illustrator-icon.svg" alt="illustrator" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://nodejs.org" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/nodejs/nodejs-original-wordmark.svg" alt="nodejs" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> </p>
+## Technologies Used
+- **React** - for building UI components
+- **React Router** - for routing and navigation
+- **Material UI** - for styled components and themes
+- **Jest** and **React Testing Library** for unit and integration testing
+- **Vite** for build and development setup
 
-<h2>Run steps</h2>
-<ol>
-    <li>```npm install --save```</li>
-    <li>```npm run dev```</li>
-</ol>
+## Testing 
+This project includes both unit tests and integration tests to ensure that the navbar functions correctly across various scenarios, including mobile and desktop views.
+
+Run tests using:
+- `npm test`
+
+## Future Development 
+Plans to expand the Navbar functionality include adding accessibility enhancements and a dark/light theme toggle.
+
+This responsive navbar will be incorporated into a larger project that will feature a full website for The Maths Club, where it will serve as a key component for navigation.
